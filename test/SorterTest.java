@@ -6,6 +6,12 @@ import java.util.LinkedList;
 
 public class SorterTest {
 
+    /**
+     * Checks if two lists are the same
+     * @param list1: List 1 to be compared
+     * @param list2: List 2 to be compared
+     * @return True if the same, False otherwise
+     */
     public static boolean listsEqual(LinkedList<Person> list1, LinkedList<Person> list2) {
         if (list1.size() != list2.size()) {
             return false;
