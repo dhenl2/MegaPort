@@ -104,9 +104,14 @@ public class MainClass {
      * Writes the given list of names to the given filename.
      * @param sorted: A list of sorted names
      * @param filename: The filename to extend from as <filename>-sorted.txt
-     * @throws IOException
      */
     public static void writeSortedNames(LinkedList<Person> sorted, String filename) throws IOException {
+        if (filename.contains("\\")) {
+            // trim from \
+            String[] split = filename.split("\\\\");
+            // grab last object in path
+            filename = split[split.length - 1];
+        }
         filename = filename.substring(0, filename.indexOf("."));
         String newFileName = String.format("%s-sorted.txt", filename);
         BufferedWriter writer = new BufferedWriter(new FileWriter(newFileName));
